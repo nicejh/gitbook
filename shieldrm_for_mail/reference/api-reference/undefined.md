@@ -35,6 +35,10 @@ description: 메일을 조건부 정책에 따라 변환 요청 받는 API
 메일에 첨부된 파일 목록
 {% endswagger-parameter %}
 
+{% swagger-parameter in="body" name="resultUrl" type="string" %}
+메일 변환 처리 완료후 응답할 URL
+{% endswagger-parameter %}
+
 {% swagger-response status="200" description="요청이 접수됨" %}
 ```javascript
 {
@@ -59,7 +63,7 @@ description: 메일을 조건부 정책에 따라 변환 요청 받는 API
 
 #### 메일의 헤더 JSON 형식
 
-<table><thead><tr><th width="162">Name</th><th width="141">Type</th><th width="296">설명</th><th>필수</th><th data-hidden></th></tr></thead><tbody><tr><td>subject</td><td>string</td><td>메일 제목</td><td>선택</td><td></td></tr><tr><td>from</td><td>string</td><td>보낸 사람</td><td>선택</td><td></td></tr><tr><td>to</td><td>array string</td><td>받는 사람 목록</td><td>선택</td><td></td></tr><tr><td>cc</td><td>array string</td><td>참조 목록</td><td>선택</td><td></td></tr></tbody></table>
+<table><thead><tr><th width="155">Name</th><th width="138">Type</th><th width="327">설명</th><th>필수</th><th data-hidden></th></tr></thead><tbody><tr><td>subject</td><td>string</td><td>메일 제목</td><td>선택</td><td></td></tr><tr><td>from</td><td>string</td><td>보낸 사람</td><td>선택</td><td></td></tr><tr><td>to</td><td>array string</td><td>받는 사람 목록</td><td>선택</td><td></td></tr><tr><td>cc</td><td>array string</td><td>참조 목록</td><td>선택</td><td></td></tr></tbody></table>
 
 #### 메일의 본문 JSON 형식
 

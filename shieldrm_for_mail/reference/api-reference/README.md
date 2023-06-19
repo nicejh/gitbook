@@ -10,10 +10,10 @@ All the methods associated with `CRUD`ing some pets. Which isn't as weird as it 
 [undefined.md](undefined.md)
 {% endcontent-ref %}
 
-## 메일 변환후 결과 알림
+## 메일 변환 결과 알림
 
 SHIELDRM 에서 파일만 변환할 때 사용
 
-{% content-ref url="users.md" %}
-[users.md](users.md)
+{% content-ref url="undefined-1.md" %}
+[undefined-1.md](undefined-1.md)
 {% endcontent-ref %}

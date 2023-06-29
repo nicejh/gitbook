@@ -4,11 +4,19 @@
 
 {% swagger method="post" path="/v1/shieldrm/{requestID}" baseUrl="resultUrl" summary="SHIELDRM 을 통해 메일 변환후 결과를 알려줄 API (SHIELDRM for Mail)" %}
 {% swagger-description %}
-
+변환 대상이 없는 경우 null 이나 빈 json 을 사용
 {% endswagger-description %}
 
-{% swagger-parameter in="body" name="수신자메일주소" type="json" required="true" %}
-변환 결과
+{% swagger-parameter in="body" name="header" type="json" %}
+변환된 메일의 헤더
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="msg" type="json" %}
+변환된 메일의 본문
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="files" type="json" required="true" %}
+변환된 첨부 파일 목록
 {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="정상 처리" %}
@@ -23,10 +31,6 @@
 
 {% endswagger-response %}
 {% endswagger %}
-
-#### 수신자별 변환 결과
-
-<table><thead><tr><th>Name</th><th width="143">Type</th><th width="305">설명</th><th>필수</th><th data-hidden></th></tr></thead><tbody><tr><td>header</td><td>json</td><td>헤더 변환 필요시 적용할 헤더 정보</td><td>선택</td><td></td></tr><tr><td>msg</td><td>string</td><td>본문 변환 필요시 적용할 본문 정보</td><td>선택</td><td></td></tr><tr><td>files</td><td>array json</td><td>변환된 파일 목록</td><td>선택</td><td></td></tr></tbody></table>
 
 #### 메일의 헤더 JSON 형식
 
@@ -47,7 +51,6 @@ POST /v1/shieldrm/ID
 Content-Type: application/json; charset=utf-8
 
 {
-  "nicejh@softcamp.co.kr": {
     "files": [
       {
         "name": "제안서.pptx",
@@ -64,24 +67,5 @@ Content-Type: application/json; charset=utf-8
         "desc": "converted to AIP"
       }
     ]
-  },
-  "nicejh@naver.com": {
-    "files": [
-      {
-        "name": "제안서.pptx",
-        "convName": "제안서.pdf",
-        "path": "/shared/file1.pdf",
-        "code": 2,
-        "desc": "converted to PDF"
-      },
-      {
-        "name": "설명서.docx",
-        "convName": "설명서.pdf",
-        "path": "/shared/file2.pdf",
-        "code": 2,
-        "desc": "converted to PDF"
-      }
-    ]
-  }
 }
 ```

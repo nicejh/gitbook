@@ -1,6 +1,6 @@
 # API Reference
 
-e into the specifics of each API endpoint by checking out our complete documentation.
+
 
 ## 메일 변환 요청
 

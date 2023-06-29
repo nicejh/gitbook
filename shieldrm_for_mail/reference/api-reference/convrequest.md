@@ -84,36 +84,3 @@ Unix Timestamp (초단위)
 #### 메일에 첨부된 파일 목록의JSON 형식
 
 <table><thead><tr><th width="162">Name</th><th width="141">Type</th><th width="296">설명</th><th>필수</th><th data-hidden></th></tr></thead><tbody><tr><td>name</td><td>string</td><td>메일 제목</td><td>필수</td><td></td></tr><tr><td>path</td><td>string</td><td>보낸 사람</td><td>필수</td><td></td></tr></tbody></table>
-
-## 메일 변환 진행상황 조회
-
-{% swagger baseUrl="https://api.myapi.com/v1" method="get" path="/mail/{id}" summary="메일 변환 진행 상황 조회" %}
-{% swagger-description %}
-
-{% endswagger-description %}
-
-{% swagger-response status="200: OK" description="완료됨" %}
-
-{% endswagger-response %}
-
-{% swagger-response status="204: No Content" description="처리중" %}
-
-{% endswagger-response %}
-
-{% swagger-response status="404: Not Found" description="해당 ID 가 없음" %}
-```javascript
-{
-    "name"="Wilson",
-    "owner": {
-        "id": "sha7891bikojbkreuy",
-        "name": "Samuel Passet",
-    "species": "Dog",}
-    "breed": "Golden Retriever",
-}
-```
-{% endswagger-response %}
-
-{% swagger-response status="500: Internal Server Error" description="내부 처리 오류" %}
-
-{% endswagger-response %}
-{% endswagger %}

@@ -83,4 +83,4 @@ Unix Timestamp (초단위)
 
 #### 메일에 첨부된 파일 목록의JSON 형식
 
-<table><thead><tr><th width="162">Name</th><th width="141">Type</th><th width="296">설명</th><th>필수</th><th data-hidden></th></tr></thead><tbody><tr><td>name</td><td>string</td><td>메일 제목</td><td>필수</td><td></td></tr><tr><td>path</td><td>string</td><td>보낸 사람</td><td>필수</td><td></td></tr></tbody></table>
+<table><thead><tr><th width="162">Name</th><th width="141">Type</th><th width="296">설명</th><th>필수</th><th data-hidden></th></tr></thead><tbody><tr><td>name</td><td>string</td><td>파일명</td><td>필수</td><td></td></tr><tr><td>path</td><td>string</td><td>파일 경로</td><td>필수</td><td></td></tr></tbody></table>

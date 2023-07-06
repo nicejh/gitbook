@@ -2,7 +2,7 @@
 
 ## 메일 변환 결과 알림
 
-{% swagger method="post" path="/v1/shieldrm/{requestID}" baseUrl="resultUrl" summary="SHIELDRM 을 통해 메일 변환후 결과를 알려줄 API (SHIELDRM for Mail)" %}
+{% swagger method="post" path="/v1/shieldrm/{id}" baseUrl="resultUrl" summary="SHIELDRM 을 통해 메일 변환후 결과를 알려줄 API (SHIELDRM for Mail)" %}
 {% swagger-description %}
 변환 대상이 없는 경우 null 이나 빈 json 을 사용
 {% endswagger-description %}

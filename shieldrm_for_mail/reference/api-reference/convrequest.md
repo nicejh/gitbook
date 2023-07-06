@@ -6,14 +6,10 @@ description: 메일을 조건부 정책에 따라 변환 요청 하는 API 이�
 
 ## 메일 변환 요청
 
-{% swagger baseUrl="https://api.myapi.com/v1" method="put" path="/mail/" summary="메일 변환 요청" %}
+{% swagger baseUrl="https://api.myapi.com/v1" method="put" path="/mail/{id}" summary="메일 변환 요청" %}
 {% swagger-description %}
 
 {% endswagger-description %}
-
-{% swagger-parameter in="body" name="id" required="true" type="string" %}
-요청 ID
-{% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="ip" type="string" required="true" %}
 SHIELDRM for Mail 로 연결한 IP

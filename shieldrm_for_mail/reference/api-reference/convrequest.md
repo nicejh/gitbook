@@ -43,7 +43,7 @@ SHIELDRM for Mail 로 연결한 IP
 메일에 첨부된 파일 목록
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="resultUrl" type="string" required="true" %}
+{% swagger-parameter in="body" name="responseUrl" type="string" required="true" %}
 메일 변환 처리 완료후 응답할 URL
 {% endswagger-parameter %}
 

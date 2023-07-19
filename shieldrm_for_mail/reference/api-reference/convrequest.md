@@ -31,12 +31,68 @@ SHIELDRM for Mail 로 연결한 IP
 메일의 헤더
 {% endswagger-parameter %}
 
+{% swagger-parameter in="body" name="header.subject" type="string" %}
+메일 제목
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="header.from" type="json" %}
+보낸사람 정보
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="header.from.name" type="string" %}
+보낸사람 이름
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="header.from.addr" type="string" %}
+보낸사람 메일 주소
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="header.to" type="array json" %}
+받는 사람 목록
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="header.to[].name" type="string" %}
+받는사람 이름
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="header.to[].addr" type="string" %}
+받는사람 메일 주소
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="header.cc[]" type="array json" %}
+참조 목록
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="header.cc[].name" type="string" %}
+참조 이름
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="header.cc[].addr" %}
+참조 메일 주소
+{% endswagger-parameter %}
+
 {% swagger-parameter in="body" name="msg" type="json" required="false" %}
 메일의 본문
 {% endswagger-parameter %}
 
+{% swagger-parameter in="body" name="msg.text" type="string" %}
+메일 본문
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="msg.format" type="string" %}
+msg 의 형식 (html 또는 text)
+{% endswagger-parameter %}
+
 {% swagger-parameter in="body" name="files" type="array json" required="true" %}
 메일에 첨부된 파일 목록
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="files[].name" type="string" %}
+파일명
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="files[].path" %}
+파일 경로
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="urlResponse" type="string" required="true" %}
@@ -45,6 +101,10 @@ SHIELDRM for Mail 로 연결한 IP
 
 {% swagger-parameter in="body" name="time" type="timestamp" required="true" %}
 Unix Timestamp (초단위)
+{% endswagger-parameter %}
+
+{% swagger-parameter in="header" name="authorization" type="string" required="true" %}
+bearer JWT
 {% endswagger-parameter %}
 
 {% swagger-response status="200" description="요청이 접수됨" %}
@@ -68,15 +128,3 @@ Unix Timestamp (초단위)
 
 {% endswagger-response %}
 {% endswagger %}
-
-#### 메일의 헤더 JSON 형식
-
-<table><thead><tr><th width="155">Name</th><th width="138">Type</th><th width="327">설명</th><th>필수</th><th data-hidden></th></tr></thead><tbody><tr><td>subject</td><td>string</td><td>메일 제목</td><td>선택</td><td></td></tr><tr><td>from</td><td>string</td><td>보낸 사람</td><td>선택</td><td></td></tr><tr><td>to</td><td>array string</td><td>받는 사람 목록</td><td>선택</td><td></td></tr><tr><td>cc</td><td>array string</td><td>참조 목록</td><td>선택</td><td></td></tr></tbody></table>
-
-#### 메일의 본문 JSON 형식
-
-<table><thead><tr><th width="162">Name</th><th width="141">Type</th><th width="296">설명</th><th>필수</th><th data-hidden></th></tr></thead><tbody><tr><td>msg</td><td>string</td><td>메일 본문</td><td>선택</td><td></td></tr><tr><td>format</td><td>string</td><td>msg 의 형식 (html 또는 text)</td><td>선택</td><td></td></tr></tbody></table>
-
-#### 메일에 첨부된 파일 목록의JSON 형식
-
-<table><thead><tr><th width="162">Name</th><th width="141">Type</th><th width="296">설명</th><th>필수</th><th data-hidden></th></tr></thead><tbody><tr><td>name</td><td>string</td><td>파일명</td><td>필수</td><td></td></tr><tr><td>path</td><td>string</td><td>파일 경로</td><td>필수</td><td></td></tr></tbody></table>

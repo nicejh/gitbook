@@ -108,23 +108,29 @@ bearer JWT
 {% endswagger-parameter %}
 
 {% swagger-response status="200" description="요청이 접수됨" %}
-```javascript
+```json
 {
-    "name"="Wilson",
-    "owner": {
-        "id": "sha7891bikojbkreuy",
-        "name": "Samuel Passet",
-    "species": "Dog",}
-    "breed": "Golden Retriever",
+    "code": 결과코드,
+    "msg": "결과 메시지"
 }
 ```
 {% endswagger-response %}
 
 {% swagger-response status="400" description="요청 파라미터 오류" %}
-
+```
+{
+    "code": 결과코드,
+    "msg": "결과 메시지"
+}
+```
 {% endswagger-response %}
 
 {% swagger-response status="500: Internal Server Error" description="내부 처리 오류" %}
-
+```
+{
+    "code": 결과코드,
+    "msg": "결과 메시지"
+}
+```
 {% endswagger-response %}
 {% endswagger %}

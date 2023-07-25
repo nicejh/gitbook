@@ -110,8 +110,8 @@ bearer JWT
 {% swagger-response status="200" description="요청이 접수됨" %}
 ```json
 {
-    "code": 결과코드,
-    "msg": "결과 메시지"
+    "errorCode": 결과코드,
+    "errorMsg": "결과 메시지"
 }
 ```
 {% endswagger-response %}
@@ -119,8 +119,8 @@ bearer JWT
 {% swagger-response status="400" description="요청 파라미터 오류" %}
 ```
 {
-    "code": 결과코드,
-    "msg": "결과 메시지"
+    "errorCode": 결과코드,
+    "errorMsg": "결과 메시지"
 }
 ```
 {% endswagger-response %}
@@ -128,8 +128,8 @@ bearer JWT
 {% swagger-response status="500: Internal Server Error" description="내부 처리 오류" %}
 ```
 {
-    "code": 결과코드,
-    "msg": "결과 메시지"
+    "errorCode": 결과코드,
+    "errorMsg": "결과 메시지"
 }
 ```
 {% endswagger-response %}

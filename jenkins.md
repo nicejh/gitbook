@@ -203,7 +203,8 @@ spec:
 1. 권장 Plugin 설치
 2. Jeknins 관리자 생성
 3. 추가 Plugin
-   - Pipeline: Stage View
+   - Stage View
+   - pipeline-utility-steps
 
 ### docker 환경 설정
 
